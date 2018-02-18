@@ -1,0 +1,24 @@
+/* 
+	Theme Name: 
+	Theme URL: 
+	Description: 
+	Author: Jiangtao
+	Author URI: 
+	Version: 1.0
+*/
+
+footer {
+  width: 100%;
+  min-height: 6vh;
+  background-color: #3a2f56;
+  text-align: center;
+}
+
+
+/* Making the header responsive */
+
+@media (max-width: 780px) {
+
+  footer {
+  }
+}

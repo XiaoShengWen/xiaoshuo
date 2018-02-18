@@ -1,0 +1,13 @@
+[mysql]
+mysql_host=127.0.0.1
+mysql_port=3306
+mysql_user=diyidan_test
+mysql_pass=diyidan_test
+mysql_db=diyidan_test
+
+[mysql_slave]
+mysql_host=127.0.0.1
+mysql_port=3306
+mysql_user=diyidan_test
+mysql_pass=diyidan_test
+mysql_db=diyidan_test

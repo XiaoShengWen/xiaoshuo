@@ -1,0 +1,126 @@
+
+├── README.md
+├── diyidan
+│   ├── __init__.py
+│   ├── app
+│   │   ├── __init__.py
+│   │   ├── handler
+│   │   │   ├── __init__.py
+│   │   │   └── website
+│   │   │       ├── __init__.py
+│   │   │       ├── callback
+│   │   │       │   └── __init__.py
+│   │   │       └── login.py
+│   │   └── route
+│   │       ├── __init__.py
+│   │       └── website.py
+│   ├── conf
+│   │   ├── __init__.py
+│   │   ├── mysql.conf
+│   │   ├── mysql_dev.conf
+│   │   ├── redis.conf
+│   │   ├── redis_dev.conf
+│   │   ├── website.conf
+│   │   └── website_dev.conf
+│   ├── crawler
+│   │   └── __init__.py
+│   ├── database
+│   │   ├── __init__.py
+│   │   ├── data_factory
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py
+│   │   │   └── uuid.py
+│   │   ├── model
+│   │   │   ├── __init__.py
+│   │   │   ├── user_auth.py
+│   │   │   ├── user_ext_info.py
+│   │   │   └── user_info.py
+│   │   └── redis_key
+│   │       ├── __init__.py
+│   │       ├── redis
+│   │       │   ├── __init__.py
+│   │       │   └── user.py
+│   │       ├── redis_cache
+│   │       │   ├── __init__.py
+│   │       │   └── state.py
+│   │       ├── redis_geo
+│   │       │   └── __init__.py
+│   │       ├── redis_log
+│   │       │   ├── __init__.py
+│   │       │   └── loghandler.py
+│   │       ├── redis_pika
+│   │       │   ├── __init__.py
+│   │       │   ├── resource.py
+│   │       │   └── user.py
+│   │       ├── redis_recommend
+│   │       │   └── __init__.py
+│   │       ├── redis_single
+│   │       │   ├── __init__.py
+│   │       │   ├── check.py
+│   │       │   ├── sms.py
+│   │       │   ├── state.py
+│   │       │   └── user.py
+│   │       └── redis_stats
+│   │           ├── __init__.py
+│   │           └── user.py
+│   ├── jobs
+│   │   └── __init__.py
+│   ├── lib
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── data_factory.py
+│   │   ├── diyidan_redis.py
+│   │   ├── http.py
+│   │   ├── loghandler.py
+│   │   ├── model.py
+│   │   ├── mysql.py
+│   │   ├── oauth_service.py
+│   │   ├── service.py
+│   │   ├── system_code.py
+│   │   ├── utils.py
+│   │   └── website.py
+│   └── service
+│       ├── __init__.py
+│       ├── constants (关键字)
+│       │   ├── __init__.py
+│       │   ├── check.py (检查)
+│       │   ├── other.py (不方便以业务区分的关键字)
+│       │   ├── resource.py (资源类关键字)
+│       │   ├── sms.py （短信相关）
+│       │   ├── time.py （时间类）
+│       │   └── user.py （用户相关）
+│       ├── game
+│       │   └── __init__.py
+│       ├── oauth （第三方登录 接口实现）
+│       │   ├── __init__.py
+│       │   ├── app (app第三方登录)
+│       │   │   ├── __init__.py
+│       │   │   └── xiaomi.py （小米第三方登录）
+│       │   └── website （web端第三方登录）
+│       │       ├── __init__.py
+│       │       ├── qq.py （qq第三方登录）
+│       │       ├── weibo.py （微博第三方登录）
+│       │       └── weixin.py （微信第三方登录）
+│       ├── resource
+│       │   ├── __init__.py
+│       │   └── upload.py （上传资源）
+│       ├── sms
+│       │   ├── __init__.py
+│       │   └── sms.py （短信）
+│       └── users
+│           ├── __init__.py
+│           ├── check.py （检查相关方法 如昵称检查）
+│           ├── oauth.py （第三方登录）
+│           ├── session.py （session相关方法）
+│           ├── state.py
+│           ├── user.py （用户相关方法）
+│           └── user_info.py （用户信息相关方法）
+├── docs
+│   └── website
+│       ├── index.md
+│       ├── login.md
+│       ├── oauth.md
+│       ├── register.md
+│       ├── sms.md
+│       └── upload_token.md
+└── website_server.py
