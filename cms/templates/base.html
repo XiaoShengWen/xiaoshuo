@@ -37,21 +37,23 @@
 <body>
 <div id="root">
   {% block root %}
-    <header>
-      {% block header %}
-        {% include 'modules/header.html' %}
-      {% endblock %}
-    </header>
+    <div id="root-container">
+      <header>
+        {% block header %}
+          {% include 'modules/header.html' %}
+        {% endblock %}
+      </header>
 
-    <section class="main">
-      {% block main %}{% for x in range(100) %}<p>{{ x }}</p>{% endfor %}{% endblock %}
-    </section>
+      <section class="main">
+        {% block main %}{% for x in range(100) %}<p>{{ x }}</p>{% endfor %}{% endblock %}
+      </section>
 
-    <footer>
-      {% block footer %}
-        {% include 'modules/footer.html' %}
-      {% endblock %}
-    </footer>
+      <footer>
+        {% block footer %}
+          {% include 'modules/footer.html' %}
+        {% endblock %}
+      </footer>
+    </div>
   {% endblock %}
   <audio preload="auto" autoplay="autoplay" src="https://res.xdcdn.net/sglms/cv/jy.mp3">你的浏览器不支持audio标签</audio>
 </div>
