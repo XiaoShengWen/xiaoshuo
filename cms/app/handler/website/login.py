@@ -23,6 +23,7 @@ class LoginHandler(BaseWebsiteHandler):
 
         account = self.get_body_argument('account', None)
         password = self.get_body_argument('password', None)
+        remember = self.get_body_argument('remember', None)
 
         code = 0
         message = ''
@@ -44,6 +45,9 @@ class LoginHandler(BaseWebsiteHandler):
                 session_service = SessionService()
                 session_service.set_session(self.session_id, 'user_id', admin_user.admin_user_id)
                 result['userId'] = admin_user.admin_user_id
+
+                self.redirect('/index')
+                return
             else:
                 code = system_code.USER_LOGIN_ERROR
 
@@ -67,7 +71,7 @@ class LoginHandler(BaseWebsiteHandler):
         pass
 
     def get(self, *args, **kwargs):
-        self.render('base.html', a='123')
+        self.render('user/login.html')
 
     def options(self, *args, **kwargs):
         self.write('POST,DELETE')
