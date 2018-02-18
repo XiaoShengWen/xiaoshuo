@@ -142,9 +142,7 @@ class BaseWebsiteHandler(tornado.web.RequestHandler):
         if self.current_user:
             super(BaseWebsiteHandler, self).render(
                     template_name,
-                    admin_realname=self.admin_realname,
-                    admin_role=self.admin_role,
-                    admin_user_id=self.admin_user_id,
+                    admin_user_id=self.current_user,
                     request_time=request_time,
                     xsrf_form_html=self.xsrf_form_html,
                     int=val_to_int,

@@ -9,11 +9,7 @@ class Service(object):
 
     __redis = None
     __redis_cache = None
-    __redis_recommend = None
     __redis_single = None
-    __redis_pika = None
-    __redis_stats = None
-    __redis_geo = None
 
     def __init__(self):
         pass
@@ -49,16 +45,6 @@ class Service(object):
         return self.__redis_cache
 
     @property
-    def redis_recommend(self):
-        """
-        推荐业务逻辑数据
-        :return:
-        """
-        if self.__redis_recommend is None:
-            self.__redis_recommend = self.__get_redis().get_redis_recommend()
-        return self.__redis_recommend
-
-    @property
     def redis_single(self):
         """
         db_session 数据
@@ -67,33 +53,3 @@ class Service(object):
         if self.__redis_single is None:
             self.__redis_single = self.__get_redis().get_redis_single()
         return self.__redis_single
-
-    @property
-    def redis_pika(self):
-        """
-        用于存储一些业务相关的数据 持久数据
-        :return:
-        """
-        if self.__redis_pika is None:
-            self.__redis_pika = self.__get_redis().get_redis_pika()
-        return self.__redis_pika
-
-    @property
-    def redis_stats(self):
-        """
-        统计业务的数据  定期更新
-        :return:
-        """
-        if self.__redis_stats is None:
-            self.__redis_stats = self.__get_redis().get_redis_stats()
-        return self.__redis_stats
-
-    @property
-    def redis_geo(self):
-        """
-        地理位置信息数据 持久数据
-        :return:
-        """
-        if self.__redis_geo is None:
-            self.__redis_geo = self.__get_redis().get_redis_geo()
-        return self.__redis_geo

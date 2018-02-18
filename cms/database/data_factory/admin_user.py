@@ -29,7 +29,7 @@ class AdminUserDataFactory(DataFactory):
             return
 
         if nickname:
-            admin_user.admin_user_realname = nickname
+            admin_user.admin_user_nickname = nickname
         if password:
             admin_user.admin_user_password = password
         if salt:
@@ -57,7 +57,7 @@ class AdminUserDataFactory(DataFactory):
         if account:
             query = query.filter(AdminUserModel.admin_user_account == account)
         if account:
-            query = query.filter(AdminUserModel.admin_user_realname == nickname)
+            query = query.filter(AdminUserModel.admin_user_nickname == nickname)
         if account:
             query = query.filter(AdminUserModel.admin_user_email == email)
         if account:

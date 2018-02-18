@@ -64,10 +64,10 @@ class UserService(Service):
 
         if device_id:
             redis_key = USER_TOKEN + (device_id)
-            result = self.redis_pika.set(redis_key, user_id)
+            result = self.redis.set(redis_key, user_id)
 
         redis_key = USER_TOKEN + (token)
-        result = self.redis_pika.setex(redis_key, 86400 * 60, user_id)
+        result = self.redis.setex(redis_key, 86400 * 60, user_id)
 
         if result:
             return token
