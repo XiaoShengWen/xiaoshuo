@@ -8,8 +8,8 @@ import tornado.options
 import tornado.ioloop
 import tornado.netutil
 
-import cms.app.route.website
-import cms.lib.config
+import yule.app.route.website
+import yule.lib.config
 import socket
 import signal
 import logging
@@ -17,9 +17,9 @@ import time
 import gc
 import os
 
-from cms.lib.jinja2_tornado import JinjaLoader
-from cms.lib import uimodules
-from cms.lib.config import website_config as app_config
+from yule.lib.jinja2_tornado import JinjaLoader
+from yule.lib import uimodules
+from yule.lib.config import website_config as app_config
 
 MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 0
 
@@ -97,15 +97,15 @@ class Application(tornado.web.Application):
         command_setting['debug'] = tornado.options.options.debug
         command_setting['autoreload'] = tornado.options.options.autoreload
         # command_setting['debug'] = True
-        # command_setting['autoreload'] = True
+        command_setting['autoreload'] = True
         command_setting['login_url'] = '/login'
         command_setting['ui_modules'] = uimodules
-        command_setting['template_loader'] = JinjaLoader(os.path.join(os.path.dirname(__file__), 'cms/templates/'))
+        command_setting['template_loader'] = JinjaLoader(os.path.join(os.path.dirname(__file__), 'yule/templates/'))
         app_config.update(command_setting)
         settings = app_config
 
         # huadu.app.route.website.handlers.extend(huadu.app.route.activity.handlers)
-        tornado.web.Application.__init__(self, cms.app.route.website.handlers, **settings)
+        tornado.web.Application.__init__(self, yule.app.route.website.handlers, **settings)
 
 
 if __name__ == "__main__":
@@ -125,5 +125,5 @@ if __name__ == "__main__":
         sockets = tornado.netutil.bind_sockets(tornado.options.options.port, family=socket.AF_INET)
         server.add_sockets(sockets)
 
-    logging.info("cms server started...")
+    logging.info("yule server started...")
     tornado.ioloop.IOLoop.instance().start()

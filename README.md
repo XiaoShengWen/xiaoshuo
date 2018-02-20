@@ -1,6 +1,6 @@
 <font color="#0099ff" size=12  face="微软雅黑">项目目录结构</font>
 -----------------
-|--cms （开发目录）<br />
+|--yule （开发目录）<br />
 <br />
 |&emsp;&emsp;|-------app <br />
 |&emsp;&emsp;|-------|&emsp;&emsp;|-------handler （control）<br />
@@ -26,10 +26,10 @@
 
 _注意事项：_
 -----------------
-### 生产环境变量： `CMS_ENV=prod `
+### 生产环境变量： `YULE_ENV=prod `
 #### 生产环境配置文件：app.conf, mysql.conf, redis.conf
 
-### 开发环境变量： `ENV=dev 或 不设置CMS_ENV `
+### 开发环境变量： `YULE_ENV=dev 或 不设置YULE_ENV `
 #### 开发环境配置文件：app_dev.conf, mysql_dev.conf, redis_dev.conf
 
 
@@ -37,7 +37,7 @@ _注意事项：_
 linux 下
 vim ~/.bashrc
 添加
-export CMS_ENV=dev
+export YULE_ENV=dev
 
 windows 
 系统属性->高级选项卡->高级->环境变量(右下角)
